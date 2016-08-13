@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "53060b92e9972e804a441794",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "Walmart",
+    "amount": 45.26,
+    "date": "2014-04-19T00:00:00.000Z",
+    "category": "groceries"
+  },
+  {
+    "_id": "53060b92e9972e804a441795",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "ATM",
+    "amount": 202,
+    "date": "2014-04-19T00:00:00.000Z",
+    "category": "cash"
+  },
+  {
+    "_id": "53060b92e9972e804a441796",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "Best Buy",
+    "amount": 318.93,
+    "date": "2014-04-19T00:00:00.000Z",
+    "category": "office"
+  },
+  {
+    "_id": "53060b92e9972e804a441797",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "Chevron",
+    "amount": 23.76,
+    "date": "2014-04-20T00:00:00.000Z",
+    "category": "gas"
+  },
+  {
+    "_id": "53060b92e9972e804a441798",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "Fandango",
+    "amount": 15.6,
+    "date": "2014-04-20T00:00:00.000Z",
+    "category": "movies"
+  },
+  {
+    "_id": "53060b92e9972e804a441799",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "Regal",
+    "amount": 20.35,
+    "date": "2014-04-20T00:00:00.000Z",
+    "category": "movies"
+  },
+  {
+    "_id": "53567f090b46775a4d9af673",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "Friday's",
+    "amount": 89.32,
+    "date": "2014-04-20T00:00:00.000Z",
+    "category": "dining"
+  },
+  {
+    "_id": "5357bc890e0b2b70d32a314b",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "description": "Murphy's Pub",
+    "amount": 132.64,
+    "date": "2014-04-18T00:00:00.000Z",
+    "category": "dining"
+  }
+]

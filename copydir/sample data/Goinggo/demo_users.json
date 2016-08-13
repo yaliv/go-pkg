@@ -1,0 +1,53 @@
+[
+  {
+    "_id": "52f1bd656cf0754e049326b8",
+    "user_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "public_id": "396bc782-6ac6-4183-a671-6e75ca5989a5",
+    "first_name": "Gordon",
+    "last_name": "Gopher",
+    "email": "gordon.gopher@gmail.com",
+    "postal_code": "33012",
+    "birthday": "1985-01-31T00:00:00.000Z",
+    "age": 28,
+    "status": "single",
+    "hobbies": [
+      "fishing",
+      "hunting",
+      "sports"
+    ]
+  },
+  {
+    "_id": "52f1bd656cf0754e049326b9",
+    "user_id": "78797f0a-df6a-47d2-b547-ebae9f442da5",
+    "public_id": "78797f0a-df6a-47d2-b547-ebae9f442da5",
+    "first_name": "Jill",
+    "last_name": "Summers",
+    "email": "jill.summers@email.com",
+    "postal_code": "33332",
+    "birthday": "1985-02-27T00:00:00.000Z",
+    "age": 28,
+    "status": "single",
+    "hobbies": [
+      "painting",
+      "animals",
+      "shopping"
+    ]
+  },
+  {
+    "_id": "52f1bd656cf0754e049326ba",
+    "user_id": "9082bc85-187d-42ca-87c6-ecc9711595c4",
+    "public_id": "9082bc85-187d-42ca-87c6-ecc9711595c4",
+    "first_name": "Jim",
+    "last_name": "Baker",
+    "email": "jim.baker@email.com",
+    "postal_code": "33186",
+    "birthday": "1952-11-23T00:00:00.000Z",
+    "age": 61,
+    "status": "married",
+    "hobbies": [
+      "travel",
+      "football",
+      "cars"
+    ]
+  }
+]
