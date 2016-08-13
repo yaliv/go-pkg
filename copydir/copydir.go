@@ -3,6 +3,7 @@ package copydir
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 )
 
@@ -78,7 +79,7 @@ func copyDir(source, dest string) (err error) {
 
 func Copy(source_dir, dest_dir string, overwrite bool) (err error) {
 
-	fmt.Println("Source: " + source_dir)
+	log.Println("Source: " + source_dir)
 
 	// Check if the source dir exist.
 	src, err := os.Stat(source_dir)
@@ -89,7 +90,7 @@ func Copy(source_dir, dest_dir string, overwrite bool) (err error) {
 		return fmt.Errorf("Source is not a directory.")
 	}
 
-	fmt.Println("Destination: " + dest_dir)
+	log.Println("Destination: " + dest_dir)
 
 	// We will continue to copy if we meet either condition:
 	// 1. The destination does not exist.
@@ -108,6 +109,6 @@ func Copy(source_dir, dest_dir string, overwrite bool) (err error) {
 	if err != nil {
 		return err
 	}
-	fmt.Println("Directory copied.")
+	log.Println("Directory copied.")
 	return nil
 }
