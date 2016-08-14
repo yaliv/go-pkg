@@ -1,3 +1,5 @@
+// Package copydir is a tool for copying contents of a directory to a
+// destination directory, including all files and sub-directories.
 package copydir
 
 import (
@@ -77,6 +79,7 @@ func copyDir(source, dest string) (err error) {
 	return
 }
 
+// Copy executes copying contents from dir to dir. Overwriting is optional.
 func Copy(source_dir, dest_dir string, overwrite bool) (err error) {
 
 	log.Println("Source: " + source_dir)
