@@ -9,17 +9,19 @@ import (
 	"os"
 )
 
-func copyFile(source, dest string) (err error) {
+func copyFile(source, dest string, ch chan error) {
 	sourcefile, err := os.Open(source)
 	if err != nil {
-		return err
+		ch <- err
+		return
 	}
 
 	defer sourcefile.Close()
 
 	destfile, err := os.Create(dest)
 	if err != nil {
-		return err
+		ch <- err
+		return
 	}
 
 	defer destfile.Close()
@@ -30,25 +32,25 @@ func copyFile(source, dest string) (err error) {
 		if err != nil {
 			err = os.Chmod(dest, sourceinfo.Mode())
 		}
-
 	}
-
-	return
+	ch <- err
 }
 
-func copyDir(source, dest string) (err error) {
+func copyDir(source, dest string, ch chan error) {
 
 	// Get properties of source dir.
 	sourceinfo, err := os.Stat(source)
 	if err != nil {
-		return err
+		ch <- err
+		return
 	}
 
 	// Create dest dir.
 
 	err = os.MkdirAll(dest, sourceinfo.Mode())
 	if err != nil {
-		return err
+		ch <- err
+		return
 	}
 
 	directory, _ := os.Open(source)
@@ -63,20 +65,22 @@ func copyDir(source, dest string) (err error) {
 
 		if obj.IsDir() {
 			// Create sub-directories - recursively.
-			err = copyDir(sourcefilepointer, destinationfilepointer)
-			if err != nil {
-				fmt.Println(err)
+			ch := make(chan error)
+			go copyDir(sourcefilepointer, destinationfilepointer, ch)
+			if err = <-ch; err != nil {
+				log.Println(err)
 			}
 		} else {
 			// Perform copy.
-			err = copyFile(sourcefilepointer, destinationfilepointer)
-			if err != nil {
-				fmt.Println(err)
+			ch := make(chan error)
+			go copyFile(sourcefilepointer, destinationfilepointer, ch)
+			if err = <-ch; err != nil {
+				log.Println(err)
 			}
 		}
 
 	}
-	return
+	ch <- err
 }
 
 // Copy executes copying contents from dir to dir. Overwriting is optional.
@@ -108,8 +112,9 @@ func Copy(source_dir, dest_dir string, overwrite bool) (err error) {
 		}
 	}
 
-	err = copyDir(source_dir, dest_dir)
-	if err != nil {
+	ch := make(chan error)
+	go copyDir(source_dir, dest_dir, ch)
+	if err = <-ch; err != nil {
 		return err
 	}
 	log.Println("Directory copied.")
